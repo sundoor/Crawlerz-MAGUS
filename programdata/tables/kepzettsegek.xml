@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kepzettsegek>
+    <kepzettseg id="1" name="Fájdalomtűrés" kateg="H" tipus="N" spec="0" nehez="2" tul1="all" tul2="aka" tul3="" tul4=""/>
+    <kepzettseg id="2" name="Fegyverhasználat – Tőr jellegű fegyverek" kateg="H" tipus="N" spec="1" nehez="3" tul1="gyo" tul2="ugy" tul3="" tul4="" />
+    <kepzettseg id="3" name="Fegyverhasználat – Botok" kateg="H" tipus="N" spec="1" nehez="3" tul1="ero" tul2="gyo" tul3="ugy" tul4="" />
+    <kepzettseg id="4" name="Fegyverhasználat – Buzogányok" kateg="H" tipus="N" spec="1" nehez="3" tul1="ero" tul2="ugy" tul3="" tul4="" />
+    <kepzettseg id="5" name="Fegyverhasználat – Egykezes kardok" kateg="H" tipus="N" spec="1" nehez="3" tul1="ero" tul2="gyo" tul3="ugy" tul4="" />
+    <kepzettseg id="6" name="Fegyverhasználat – Csatabárdok" kateg="H" tipus="N" spec="1" nehez="3" tul1="ero" tul2="ugy" tul3="" tul4="" />
+    <kepzettseg id="7" name="Fegyverhasználat – Nehéz kardok" kateg="H" tipus="N" spec="1" nehez="3" tul1="ero" tul2="ugy" tul3="" tul4="" />
+    <kepzettseg id="8" name="Fegyverhasználat – Nyeles fegyverek" kateg="H" tipus="N" spec="1" nehez="3" tul1="ero" tul2="ugy" tul3="" tul4="" />
+    <kepzettseg id="9" name="Fegyverhasználat – Hajítófegyverek" kateg="H" tipus="N" spec="1" nehez="3" tul1="ugy" tul2="erz" tul3="" tul4="" />
+    <kepzettseg id="10" name="Fegyverhasználat – Íjak" kateg="H" tipus="N" spec="1" nehez="3" tul1="ugy" tul2="erz" tul3="" tul4="" />
+    <kepzettseg id="11" name="Fegyverhasználat – Nyílpuskák" kateg="H" tipus="N" spec="1" nehez="3" tul1="ugy" tul2="erz" tul3="" tul4="" />
+    <kepzettseg id="12" name="Fegyverhasználat – Egyéb" kateg="H" tipus="N" spec="1" nehez="3" tul1="ugy" tul2="erz" tul3="" tul4="" />
+    <kepzettseg id="13" name="Fegyverismeret" kateg="H" tipus="N" spec="0" nehez="2" tul1="int" tul2="erz" tul3="" tul4="" />
+    <kepzettseg id="14" name="Hadvezetés" kateg="H" tipus="N" spec="0" nehez="3" tul1="int" tul2="kar" tul3="" tul4="" />
+    <kepzettseg id="15" name="Harci láz" kateg="H" tipus="N" spec="0" nehez="2" tul1="all" tul2="ege" tul3="" tul4="" />
+    <kepzettseg id="16" name="Harcművészet" kateg="H" tipus="N" spec="1" nehez="4" tul1="ero" tul2="gyo" tul3="ugy" tul4="aka" />
+    <kepzettseg id="17" name="Harctéri gyakorlat" kateg="H" tipus="N" spec="0" nehez="2" tul1="gyo" tul2="ugy" tul3="erz" tul4="" />
+    <kepzettseg id="18" name="Kétkezesharc" kateg="H" tipus="N" spec="0" nehez="3" tul1="gyo" tul2="ugy" tul3="" tul4="" />
+    <kepzettseg id="19" name="Pajzshasználat" kateg="H" tipus="N" spec="0" nehez="2" tul1="ero" tul2="ugy" tul3="" tul4="" />
+    <kepzettseg id="20" name="Pusztakezes harc" kateg="H" tipus="N" spec="0" nehez="2" tul1="ero" tul2="ugy" tul3="all" tul4="" />
+    <kepzettseg id="21" name="Pusztítás" kateg="H" tipus="N" spec="0" nehez="2" tul1="ero" tul2="" tul3="" tul4="" />
+    <kepzettseg id="22" name="Taktika" kateg="H" tipus="N" spec="0" nehez="2" tul1="erz" tul2="" tul3="" tul4="" />
+    <kepzettseg id="23" name="Vakharc" kateg="H" tipus="N" spec="0" nehez="3" tul1="erz" tul2="" tul3="" tul4="" />
+    <kepzettseg id="24" name="Vértviselet" kateg="H" tipus="N" spec="0" nehez="2" tul1="ero" tul2="" tul3="" tul4="" />
+    <kepzettseg id="25" name="Álcázás/álruha" kateg="A" tipus="N" spec="0" nehez="2" tul1="ugy" tul2="erz" tul3="" tul4="" />
+    <kepzettseg id="26" name="Hamisítás" kateg="A" tipus="N" spec="0" nehez="3" tul1="ugy" tul2="int" tul3="" tul4="" />
+    <kepzettseg id="27" name="Jelbeszéd" kateg="A" tipus="N" spec="0" nehez="2" tul1="erz" tul2="int" tul3="" tul4="" />
+    <kepzettseg id="28" name="Kocsmai verekedés" kateg="A" tipus="N" spec="0" nehez="1" tul1="ero" tul2="gyo" tul3="ugy" tul4="" />
+    <kepzettseg id="29" name="Méregkeverés" kateg="A" tipus="N" spec="0" nehez="2" tul1="int" tul2="" tul3="" tul4="" />
+    <kepzettseg id="30" name="Orvtámadás" kateg="A" tipus="N" spec="0" nehez="2" tul1="ugy" tul2="" tul3="" tul4="" />
+    <kepzettseg id="31" name="Kínzás" kateg="A" tipus="N" spec="0" nehez="2" tul1="ugy" tul2="int" tul3="" tul4="" />
+    <kepzettseg id="32" name="Szabadulóművészet" kateg="A" tipus="N" spec="0" nehez="3" tul1="ugy" tul2="" tul3="" tul4="" />
+    <kepzettseg id="33" name="Szerencsejáték" kateg="A" tipus="N" spec="1" nehez="2" tul1="ugy" tul2="int" tul3="" tul4="" />
+    <kepzettseg id="34" name="Csapdakeresés" kateg="A" tipus="S" spec="0" nehez="0" tul1="" tul2="" tul3="" tul4="" />
+    <kepzettseg id="35" name="Lopódzás" kateg="A" tipus="S" spec="0" nehez="0" tul1="" tul2="" tul3="" tul4="" />
+    <kepzettseg id="36" name="Rejtőzködés" kateg="A" tipus="S" spec="0" nehez="0" tul1="" tul2="" tul3="" tul4="" />
+    <kepzettseg id="37" name="Rejtekhely kutatás" kateg="A" tipus="S" spec="0" nehez="0" tul1="" tul2="" tul3="" tul4="" />
+    <kepzettseg id="38" name="Zárnyitás" kateg="A" tipus="S" spec="0" nehez="0" tul1="" tul2="" tul3="" tul4="" />
+    <kepzettseg id="39" name="Zsebmetszés" kateg="A" tipus="S" spec="0" nehez="0" tul1="" tul2="" tul3="" tul4="" />
+    <kepzettseg id="40" name="Veszélyérzék" kateg="A" tipus="S" spec="0" nehez="0" tul1="" tul2="" tul3="" tul4="" />
+    <kepzettseg id="41" name="Állatismeret" kateg="V" tipus="N" spec="1" nehez="1" tul1="" tul2="" tul3="" tul4="" />
+    <kepzettseg id="42" name="Csapdaállítás" kateg="V" tipus="N" spec="0" nehez="2" tul1="ugy" tul2="" tul3="" tul4="" />
+    <kepzettseg id="43" name="Csomózás" kateg="V" tipus="N" spec="0" nehez="2" tul1="ugy" tul2="" tul3="" tul4="" />
+    <kepzettseg id="44" name="Értékbecslés" kateg="V" tipus="N" spec="0" nehez="1" tul1="int" tul2="erz" tul3="" tul4="" />
+    <kepzettseg id="45" name="Futás" kateg="V" tipus="N" spec="0" nehez="1" tul1="all" tul2="ege" tul3="" tul4="" />
+    <kepzettseg id="46" name="Hajózás" kateg="V" tipus="N" spec="0" nehez="2" tul1="" tul2="" tul3="" tul4="" />
+    <kepzettseg id="47" name="Hangutánzás" kateg="V" tipus="N" spec="0" nehez="2" tul1="erz" tul2="" tul3="" tul4="" />
+    <kepzettseg id="48" name="Helyismeret" kateg="V" tipus="N" spec="1" nehez="1" tul1="" tul2="" tul3="" tul4="" />
+    <kepzettseg id="49" name="Idomítás" kateg="V" tipus="N" spec="1" nehez="2" tul1="asz" tul2="" tul3="" tul4="" />
+    <kepzettseg id="50" name="Időjóslás" kateg="V" tipus="N" spec="0" nehez="2" tul1="erz" tul2="int" tul3="" tul4="" />
+    <kepzettseg id="51" name="Kocsihajtás" kateg="V" tipus="N" spec="0" nehez="1" tul1="ugy" tul2="" tul3="" tul4="" />
+    <kepzettseg id="52" name="Lovaglás" kateg="V" tipus="N" spec="0" nehez="1" tul1="ugy" tul2="" tul3="" tul4="" />
+    <kepzettseg id="53" name="Nyomolvasás" kateg="V" tipus="N" spec="0" nehez="2" tul1="erz" tul2="" tul3="" tul4="" />
+    <kepzettseg id="54" name="Szakma" kateg="V" tipus="N" spec="1" nehez="2" tul1="" tul2="" tul3="" tul4="" />
+    <kepzettseg id="55" name="Úszás" kateg="V" tipus="N" spec="0" nehez="1" tul1="ero" tul2="all" tul3="ege" tul4="" />
+    <kepzettseg id="56" name="Vadonjárás" kateg="V" tipus="N" spec="0" nehez="2" tul1="erz" tul2="" tul3="" tul4="" />
+    <kepzettseg id="57" name="Akrobatika" kateg="V" tipus="S" spec="0" nehez="0" tul1="" tul2="" tul3="" tul4="" />
+    <kepzettseg id="58" name="Esés" kateg="V" tipus="S" spec="0" nehez="0" tul1="" tul2="" tul3="" tul4="" />
+    <kepzettseg id="59" name="Mászás" kateg="V" tipus="S" spec="0" nehez="0" tul1="" tul2="" tul3="" tul4="" />
+    <kepzettseg id="60" name="Alkímia" kateg="T" tipus="N" spec="0" nehez="3" tul1="int" tul2="" tul3="" tul4="" />
+    <kepzettseg id="61" name="Élettan" kateg="T" tipus="N" spec="0" nehez="3" tul1="int" tul2="" tul3="" tul4="" />
+    <kepzettseg id="62" name="Építészet" kateg="T" tipus="N" spec="0" nehez="3" tul1="int" tul2="" tul3="" tul4="" />
+    <kepzettseg id="63" name="Herbalizmus" kateg="T" tipus="N" spec="0" nehez="2" tul1="int" tul2="" tul3="" tul4="" />
+    <kepzettseg id="64" name="Írás/Olvasás" kateg="T" tipus="N" spec="0" nehez="3" tul1="int" tul2="" tul3="" tul4="" />
+    <kepzettseg id="65" name="Jog/Törvénykezés" kateg="T" tipus="N" spec="0" nehez="3" tul1="int" tul2="asz" tul3="" tul4="" />
+    <kepzettseg id="66" name="Legendaismeret" kateg="T" tipus="N" spec="0" nehez="2" tul1="int" tul2="" tul3="" tul4="" />
+    <kepzettseg id="67" name="Mechanika" kateg="T" tipus="N" spec="0" nehez="3" tul1="int" tul2="ugy" tul3="" tul4="" />
+    <kepzettseg id="68" name="Oktatás" kateg="T" tipus="N" spec="0" nehez="3" tul1="int" tul2="asz" tul3="" tul4="" />
+    <kepzettseg id="69" name="Orvoslás" kateg="T" tipus="N" spec="0" nehez="3" tul1="int" tul2="" tul3="" tul4="" />
+    <kepzettseg id="70" name="Ősi nyelv" kateg="T" tipus="N" spec="1" nehez="4" tul1="int" tul2="" tul3="" tul4="" />
+    <kepzettseg id="71" name="Számtan/Mértan" kateg="T" tipus="N" spec="0" nehez="3" tul1="int" tul2="" tul3="" tul4="" />
+    <kepzettseg id="72" name="Térképészet" kateg="T" tipus="N" spec="0" nehez="3" tul1="int" tul2="" tul3="" tul4="" />
+    <kepzettseg id="73" name="Történelem" kateg="T" tipus="N" spec="0" nehez="2" tul1="int" tul2="" tul3="" tul4="" />
+    <kepzettseg id="74" name="Vallásismeret" kateg="T" tipus="N" spec="0" nehez="2" tul1="int" tul2="asz" tul3="" tul4="" />
+    <kepzettseg id="75" name="Ékesszólás" kateg="S" tipus="N" spec="0" nehez="2" tul1="int" tul2="asz" tul3="kar" tul4="" />
+    <kepzettseg id="76" name="Heraldika" kateg="S" tipus="N" spec="0" nehez="2" tul1="int" tul2="" tul3="" tul4="" />
+    <kepzettseg id="77" name="Kultúra" kateg="S" tipus="N" spec="1" nehez="1" tul1="" tul2="" tul3="" tul4="" />
+    <kepzettseg id="78" name="Lélektan" kateg="S" tipus="N" spec="0" nehez="3" tul1="int" tul2="asz" tul3="erz" tul4="" />
+    <kepzettseg id="79" name="Művészetek" kateg="S" tipus="N" spec="1" nehez="2" tul1="" tul2="" tul3="" tul4="" />
+    <kepzettseg id="80" name="Nyelvtudás" kateg="S" tipus="N" spec="1" nehez="1" tul1="" tul2="" tul3="" tul4="" />
+    <kepzettseg id="81" name="Párbaj" kateg="S" tipus="N" spec="0" nehez="2" tul1="int" tul2="asz" tul3="kar" tul4="" />
+    <kepzettseg id="82" name="Politika/diplomácia" kateg="S" tipus="N" spec="0" nehez="3" tul1="asz" tul2="kar" tul3="int" tul4="" />
+    <kepzettseg id="83" name="Szexuális kultúra" kateg="S" tipus="N" spec="0" nehez="1" tul1="asz" tul2="kar" tul3="" tul4="" />
+    <kepzettseg id="84" name="Színészet" kateg="S" tipus="N" spec="0" nehez="3" tul1="asz" tul2="kar" tul3="" tul4="" />
+    <kepzettseg id="85" name="Udvari etikett/intrika" kateg="S" tipus="N" spec="0" nehez="2" tul1="int" tul2="asz" tul3="kar" tul4="" />
+    <kepzettseg id="86" name="Démonológia" kateg="M" tipus="N" spec="0" nehez="4" tul1="int" tul2="aka" tul3="" tul4="" />
+    <kepzettseg id="87" name="Drágakőmágia" kateg="M" tipus="N" spec="0" nehez="4" tul1="int" tul2="aka" tul3="asz" tul4="" />
+    <kepzettseg id="88" name="Magasmágia" kateg="M" tipus="N" spec="1" nehez="4" tul1="int" tul2="aka" tul3="asz" tul4="" />
+    <kepzettseg id="89" name="Nekromancia" kateg="M" tipus="N" spec="0" nehez="4" tul1="int" tul2="aka" tul3="asz" tul4="" />
+    <kepzettseg id="90" name="Őselemi mágia" kateg="M" tipus="N" spec="0" nehez="4" tul1="int" tul2="aka" tul3="asz" tul4="" />
+    <kepzettseg id="91" name="Pszi" kateg="M" tipus="N" spec="1" nehez="4" tul1="int" tul2="aka" tul3="asz" tul4="" />
+    <kepzettseg id="92" name="Rúnamágia" kateg="M" tipus="N" spec="0" nehez="4" tul1="int" tul2="aka" tul3="asz" tul4="" />
+    <kepzettseg id="93" name="Tapasztalati mágia" kateg="M" tipus="N" spec="1" nehez="4" tul1="int" tul2="aka" tul3="asz" tul4="" />
+</kepzettsegek>

@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>GEM - MAGUS</title>
+		<link rel="icon" type="image/ico" href="programdata/gfx/favicon.ico" />
+		<link rel="stylesheet" type="text/css" href="programdata/gfx/style.css" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta charset="utf-8" />
+		
+		<script src="programdata/tables/fajok.js"></script> 
+		<script src="programdata/tables/hatterek.js"></script> 
+		<script src="programdata/tables/kasztok.js"></script> 
+		<script src="programdata/tables/kepzettsegek.js"></script> 
+		<script src="programdata/tables/konstansok.js"></script> 
+		<script src="programdata/tables/targyak.js"></script> 
+		
+		<script src="programdata/external/jquery/jquery-1.11.3.min.js"></script>
+		<script src="programdata/external/jquery-ui/jquery-ui.min.js"></script>
+		<script src="programdata/js/main.js"></script>
+		<script src="programdata/js/karalk.js"></script>
+		<script src="programdata/js/kar.js"></script>
+		<script src="programdata/js/szintlepesek.js"></script>
+		<script src="programdata/js/szintlepes.js"></script>
+		<script src="programdata/js/targylista.js"></script>
+		
+		<script src="programdata/plugins/kockak/kockak.js"></script>
+		
+		<link href="programdata/external/jquery-ui/jquery-ui.css" rel="stylesheet">
+	</head>		
+	<body>
+		<div id="plugins">
+			<div id="kockak-dialog" title="Kockák">
+				<fieldset>
+					<legend>Korábbi dobások</legend>
+					<textarea id="kockak_eredmenyek" cols="13" rows="3"></textarea> <a id="kockak_eredmenytorles" class="button">Törlés</a>
+				</fieldset>
+				<fieldset>
+					<legend>Kockadobás</legend>
+					<div>
+						<select id="kockak_kockakszama">
+							<option value="1" selected="selected">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+							<option value="5">5</option>
+							<option value="6">6</option>
+						</select>
+						<b>K</b>
+						<select id="kockak_kockakoldala">
+							<option value="6" selected="selected">6</option>
+							<option value="10">10</option>
+							<option value="100">100</option>
+						</select>
+						<a id="kockak_dobas" class="button">Dobás</a>
+					</div>
+				</fieldset>
+				<fieldset>
+					<legend>Dobás eredménye</legend>
+					<div id="kockak_eredmeny"></div>
+				</fieldset>	
+			</div>
+		</div>
+			
+		<div id="wrapper">
+			<div id="ribbon">
+				<div id="menu">  
+					<div><img src="programdata/gfx/gemlogo_small.png" alt="G" /></div>
+					<div><a id="homebutton"><img src="programdata/gfx/dot.gif" title="Visszatérés a kezdőoldalra" alt="Kezdőoldal" class="icon ic_b_home tooltip" /></a></div>
+					<div><a class="save"><img src="programdata/gfx/dot.gif" title="Karakterlap mentése XML formátumban" alt="Mentés" class="icon ic_b_save tooltip" /></a></div>
+					<div><a class="themebutton"><img src="programdata/gfx/dot.gif" title="Téma megváltoztatása" alt="Mentés" class="icon ic_s_theme tooltip" /></a></div>
+					<!--<div><a><img src="programdata/gfx/dot.gif" title="Karakterlap megjelenítése nyomtatóbarát változatban" alt="Nyomtatás" class="icon ic_b_print tooltip" /></a></div>-->
+				</div>
+				<div style="clear:both;"></div>
+			</div>
+			
+			<div id="content">
+				
+				<!-- Kezdőoldal -->
+				<div id="tabsKezdooldal" style="display:block;">
+					<ul>
+						<li><a href="#tabsKezdooldal-1"><img src="programdata/gfx/dot.gif" title="Kezdőoldal" alt="" class="icon ic_b_home" /> Kezdőoldal</a></li>
+					</ul>
+					<div id="tabsKezdooldal-1">
+						<div><img src="programdata/gfx/gemlogo.png" alt="GEM logo" /></div>
+						<fieldset style="display:inline-block;">
+							<legend>Új karakter alkotása</legend>
+							<a id="karakteralkotas_start" class="ui-state-default ui-corner-all">Karakteralkotás</a>
+						</fieldset>
+						<fieldset style="display:inline-block;">
+							<legend>Karakter betöltése</legend>
+							<input type="file" id="files" name="files[]" />
+						</fieldset>
+						<div>Crawlerz MAGUS Karaktergeneráló és Interakív Karakterlap</div>
+						<div>M.A.G.U.S. Új Törvénykönyv kiadásához</div>
+						<div><a href="http://crawlerz.hu">http//crawlerz.hu</a></div>
+					</div>
+				</div>
+				
+				<!-- Karakteralkotás -->
+				<div id="tabsKarakteralkotas" style="display:none;">
+					<ul>
+						<li><a href="#tabsKarakteralkotas-1"><img src="programdata/gfx/dot.gif" title="Karakteralkotás" alt="" class="icon ic_b_usredit" /> Karakteralkotás</a></li>
+					</ul>
+					<div id="tabsKarakteralkotas-1">
+						<div id="karakteralkotas_1">
+							<fieldset>
+								<legend>1/6 Karakteralkotási információk</legend>
+								<h3>Karakteralkotás</h3>
+								<div class="ui-widget">
+									<div class="ui-state-highlight ui-corner-all" style="margin-top: 20px; padding: 0 .7em;">
+										<p><span class="ui-icon ui-icon-info" style="float: left; margin-right: .3em;"></span>
+										<strong>Fontos!</strong> Mielőtt továbbhaladsz, olvasd el az alábbiakat.</p>
+										<p>A karaktergeneráló nem helyettesíti a szabálykönyvet, pusztán egy dinamikus, visszakövethető karakterlapot biztosít.
+										Ezáltal, illetve figyelembevéve azt, hogy a MAGUS egy rugalmas rendszer, a karaktergeneráló nem fog minden szabályt betartatni.
+										A jelenlegi kontrollok elsősorban a JK-t segítik, hogy kevesebb hibát tudjon elkövetni a karakter készítésekor.
+										A szabályok betartatásának feladata tehát továbbra is a KM-re hárul.
+										</p>
+										<h4>A karakteralkotás menete</h4>
+										<p>A program használata a karakter létrehozásával kezdődik. Ez egy hatlépéses folyamat. A lépésekből nem lehet visszalépni, ha valamit elrontottál
+										előlről kell kezdened a böngésző frissítésével. Célszerű előre jól átgondolni a karaktert mielőtt belekezdesz.
+										A karakteralkotáskor egy 0. tapasztalati szintű játékos karaktert fogsz létrehozni.
+										1. TSZ-re majd szintlépéssel lehet jutni, amit a karakteralkotás után rögtön meg is lehet tenni.</p>
+									</div>
+								</div>
+							</fieldset>
+						</div>
+						
+						<div id="karakteralkotas_2">
+							<fieldset>
+								<legend>2/6 Karakter alapadatok</legend>
+								<div class="ui-widget">
+									<div class="ui-state-highlight ui-corner-all" style="margin-top: 20px; padding: 0 .7em;">
+										<p><span class="ui-icon ui-icon-info" style="float: left; margin-right: .3em;"></span>
+										Adj egy nevet a karakterednek, majd válaszd ki a faját és kasztját. A karakter külsejének leírását nem kötelező megadni, később is szerkeszthető.
+										</p>
+									</div>
+								</div>
+								<table>
+									<tr>
+										<th>Keresztnév&ast;</th>
+										<th>Vezetéknév</th>
+										<th>Faj&ast;</th>
+										<th>Kaszt&ast;</th>
+									</tr>
+									<tr>
+										<td><input type="text" id="karakteralkotas_knev" value=""/></td>
+										<td><input type="text" id="karakteralkotas_vnev" value=""/></td>
+										<td><select id="karakteralkotas_faj"></select></td>
+										<td><select id="karakteralkotas_kaszt"></select></td>
+									</tr>
+									<tr>
+										<th colspan="4">Külső leírása</th>
+									</tr>
+									<tr>
+										<td colspan="4"><textarea id="karakteralkotas_kulso" style="width: 90%;"></textarea></td>
+									</tr>
+								</table>
+							</fieldset>
+						</div>
+						
+						<div id="karakteralkotas_3">
+							<fieldset>
+								<legend>3/6 Tulajdonságok</legend>
+								<div class="ui-widget">
+									<div class="ui-state-highlight ui-corner-all" style="margin-top: 20px; padding: 0 .7em;">
+										<p><span class="ui-icon ui-icon-info" style="float: left; margin-right: .3em;"></span>
+										Itt oszthatod el a tulajdonságpontokat. 1 alá egyik tulajdonság sem csökkenthető. Nem muszáj minden pontot elosztanod, de a karakteralkotás után többé nem fogod tudni
+										a megmaradókat elosztani.
+										</p>
+									</div>
+								</div>
+								<h3>Elosztható pontok: <span id="karakteralkotas_tulajdonsagpontok">0</span></h3>
+								<table id="karakteralkotas_tulajdonsagok">
+									<tr>
+										<th class="tooltip" title="Erő">ERŐ</th>
+										<th class="tooltip" title="Gyorsaság">GYO</th>
+										<th class="tooltip" title="Ügyesség">ÜGY</th>
+										<th class="tooltip" title="Állóképesség">ÁLL</th>
+										<th class="tooltip" title="Egészség">EGÉ</th>
+										<th class="tooltip" title="Intelligencia">INT</th>
+										<th class="tooltip" title="Karizma">KAR</th>
+										<th class="tooltip" title="Akaraterő">AKA</th>
+										<th class="tooltip" title="Asztrál">ASZ</th>
+										<th class="tooltip" title="Érzékelés">ÉRZ</th></tr>
+									<tr>
+										<td><input id="karakteralkotas_ero" class="spinner" value="12"/></td>
+										<td><input id="karakteralkotas_gyo" class="spinner" value="12"/></td>
+										<td><input id="karakteralkotas_ugy" class="spinner" value="12"/></td>
+										<td><input id="karakteralkotas_all" class="spinner" value="12"/></td>
+										<td><input id="karakteralkotas_ege" class="spinner" value="12"/></td>
+										<td><input id="karakteralkotas_int" class="spinner" value="12"/></td>
+										<td><input id="karakteralkotas_kar" class="spinner" value="12"/></td>
+										<td><input id="karakteralkotas_aka" class="spinner" value="12"/></td>
+										<td><input id="karakteralkotas_asz" class="spinner" value="12"/></td>
+										<td><input id="karakteralkotas_erz" class="spinner" value="12"/></td>
+									</tr>
+								</table>
+							</fieldset>
+						</div>
+						
+						<div id="karakteralkotas_4">
+							<fieldset>
+								<legend>4/6 Háttér</legend>
+								<div class="ui-widget">
+										<div class="ui-state-highlight ui-corner-all" style="margin-top: 20px; padding: 0 .7em;">
+										<p><span class="ui-icon ui-icon-info" style="float: left; margin-right: .3em;"></span>
+										Itt választhatsz háttereket a karakterednek. Minden hátteret csak egyszer vehetsz fel, kivéve az Adottságokat, amelyek annyit növelnek az adott tulajdonságon ahányszor
+										felvetted a tulajdonság Adottság hátterét. 
+										</p>
+									</div>
+								</div>
+								<h3>KAP/TSZ: <span id="karakteralkotas_kaptsz">0</span></h3>
+								<table id="karakteralkotas_hatterek">
+									<tr>
+										<th>Háttér</th>
+										<th>KAP</th>
+										<th></th>
+									</tr>
+									<tr>
+										<td><select id="karakteralkotas_hattervalaszto"></option></select></td>
+										<td id="karakteralkotas_hatterkap"></td>
+										<td><a id="karakteralkotas_hatterhozzaado" class="ui-state-default ui-corner-all button"><span class="ui-icon ui-icon-plus"></span></a></td>
+									</tr>
+								</table>
+							</fieldset>
+						</div>
+						
+						<div id="karakteralkotas_5">
+							<fieldset>
+								<legend>5/6 Képzettségek</legend>
+								<div class="ui-widget">
+									<div class="ui-state-highlight ui-corner-all" style="margin-top: 20px; padding: 0 .7em;">
+										<p><span class="ui-icon ui-icon-info" style="float: left; margin-right: .3em;"></span>
+										Itt viheted fel az induló képzettségeidet. Ezek egyike sem kerül KAP-ba, ezek olyan képzettségek amelyek a karakter az előtörténete (pl. nyelv) és az iskolája miatt megkap.
+										A MAGUS rendszere túl rugalmas ahhoz, hogy ezt kontrollálni lehessen, így aztán vigyél fel minden képzettséget amit a szabálykönyv és a KM megenged.
+										</p>
+									</div>
+								</div>
+								<table id="karakteralkotas_kepzettsegek">
+									<tr>
+										<th>Képzettség</th>
+										<th>Specializáció</th>
+										<th>Fok</th>
+										<th>&plus;/&minus;</th>
+									</tr>
+									<tr>
+										<td><select id="karakteralkotas_kepzettsegvalaszto"></option></select></td>
+										<td><input type="text" id="karakteralkotas_kepzettsegspec" value="" /></td>
+										<td id="karakteralkotas_kepzettsegfokvalaszto"></td>
+										<td><a id="karakteralkotas_kepzettseghozzaado" class="ui-state-default ui-corner-all button"><span class="ui-icon ui-icon-plus"></span></a></td>
+									</tr>
+								</table>
+							</fieldset>
+						</div>
+						
+						<div id="karakteralkotas_6">
+							<fieldset>
+								<legend>6/6 Összefoglaló</legend>
+								<div class="ui-widget">
+									<div class="ui-state-highlight ui-corner-all" style="margin-top: 20px; padding: 0 .7em;">
+										<p><span class="ui-icon ui-icon-info" style="float: left; margin-right: .3em;"></span>
+										Nézd át a karaktered alapértékeit. Ha elégedett vagy vele, a Mentés gombbal mentheted el a karakterlapod. A program XML formátumban menti el a karakterlapot
+										és ezt a fájlt kell majd megőrizned, mert ezentúl ide fog rögzülni minden változtatás. <b>Fontos, hogy megtartsd a .xml kiterjesztést!</b> 
+										</p>
+									</div>
+								</div>
+								<p><textarea id="karakteralkotas_osszesites" rows="10" cols="60"></textarea></p>
+							</fieldset>
+						</div>
+						
+						<div>
+							<a href="index.html" id="karakteralkotas_ujra" class="ui-state-default ui-corner-all">Újrakezdés</a>
+							<a href="#" id="karakteralkotas_tovabb" class="ui-state-default ui-corner-all save">Tovább</a>
+							<a href="#" id="karakteralkotas_save" class="ui-state-default ui-corner-all">Mentés</a>
+						</div>
+					</div>
+				</div>
+					
+				<!-- Karakter -->
+				<div id="tabs" style="display:none;">
+					<ul>
+						<li><a href="#tabs-1"><img src="programdata/gfx/dot.gif" title="Kezdőoldal" alt="" class="icon ic_s_rights" /> Karakterlap</a></li>
+						<li><a href="#tabs-2"><img src="programdata/gfx/dot.gif" title="Szintlépés" alt="Szintlépés" class="icon ic_b_snewtbl" /> Szintlépés</a></li>
+						<li><a href="#tabs-3"><img src="programdata/gfx/dot.gif" title="Szintlépések listája" alt="Szintlépések" class="icon ic_b_newtbl" /> Szintlépések</a></li>
+						<li><a href="#tabs-4"><img src="programdata/gfx/dot.gif" title="Előtörténet" alt="Előtörténet" class="icon ic_b_inline_edit" /> Előtörténet</a></li>
+					</ul>
+					
+					<!-- Karakterlap -->
+					<div id="tabs-1">
+						<div class="accordion">
+							<h3>Alapértékek</h3>
+							<div>
+								<table>
+									<tr>
+										<th colspan="3" class="tooltip" title="Karakter neve">Név</th>
+										<th colspan="2" class="tooltip" title="Karakter faja">Faj</th>
+										<th colspan="2" class="tooltip" title="Karakter kasztja">Kaszt</th>
+										<th class="tooltip" title="Tapasztalati szint">TSZ</th>
+										<th  class="tooltip" title="Szintenként elkölthető maximális KAP">KAP/TSZ</th>
+										<th class="tooltip" title="Megmaradó képzettségpontok">KP</th>
+									</tr>
+									<tr>
+										<td colspan="3" id="karakterlap_nev"></td>
+										<td colspan="2" id="karakterlap_faj"></td>
+										<td colspan="2" id="karakterlap_kaszt"></td>
+										<td id="karakterlap_tsz"></td>
+										<td id="karakterlap_kaptsz">50</td>
+										<td id="karakterlap_kepzp"></td>
+									</tr>
+									<tr>
+										<th class="tooltip" title="Erő">ERŐ</th>
+										<th class="tooltip" title="Gyorsaság">GYO</th>
+										<th class="tooltip" title="Ügyesség">ÜGY</th>
+										<th class="tooltip" title="Állóképesség">ÁLL</th>
+										<th class="tooltip" title="Egészség">EGÉ</th>
+										<th class="tooltip" title="Intelligencia">INT</th>
+										<th class="tooltip" title="Karizma">KAR</th>
+										<th class="tooltip" title="Akaraterő">AKA</th>
+										<th class="tooltip" title="Asztrál">ASZ</th>
+										<th class="tooltip" title="Érzékelés">ÉRZ</th>
+									</tr>
+									<tr>
+										<td id="karakterlap_ero">0</td>
+										<td id="karakterlap_gyo">0</td>
+										<td id="karakterlap_ugy">0</td>
+										<td id="karakterlap_all">0</td>
+										<td id="karakterlap_ege">0</td>
+										<td id="karakterlap_int">0</td>
+										<td id="karakterlap_kar">0</td>
+										<td id="karakterlap_aka">0</td>
+										<td id="karakterlap_asz">0</td>
+										<td id="karakterlap_erz">0</td>
+									</tr>
+									<tr>
+										<th class="tooltip" title="Életerő pont">ÉP</th>
+										<th class="tooltip" title="Fájdalomtűrési pont">FP</th>
+										<th></th><th class="tooltip" title="Pszi-pont">&psi;P</th>
+										<th class="tooltip" title="Manapont">MP</th>
+										<th class="tooltip" title="Kegypont">KP</th>
+										<th></th>
+										<th></th>
+										<th class="tooltip" title="Mentális tudatalalatti mágiaellenállás">MTME</th>
+										<th class="tooltip" title="Asztrális tudatalatti mágiaellenállás">ATME</th>
+									</tr>
+									<tr>
+										<td id="karakterlap_ep">0</td>
+										<td id="karakterlap_fp">0</td>
+										<td></td>
+										<td id="karakterlap_pp">0</td>
+										<td id="karakterlap_mp">0</td>
+										<td id="karakterlap_kp">0</td>
+										<td></td>
+										<td></td>
+										<td id="karakterlap_mtme">0</td>
+										<td id="karakterlap_atme">0</td>
+									</tr>
+									<tr>
+										<th colspan="10" class="tooltip" title="Felvett hátterek">Hátterek</th>
+									</tr>
+									<tr>
+										<td colspan="10" id="karakterlap_hatterek"></td>
+									</tr>
+									<tr>
+										<th colspan="2">Harcértékek</th>
+										<th class="tooltip" title="Kezdeményező érték">KÉ</th>
+										<th class="tooltip" title="Támadóérték">TÉ</th>
+										<th class="tooltip" title="Védekező érték">VÉ</th>
+										<th class="tooltip" title="Célzóérték">CÉ</th>
+										<th colspan="2" class="tooltip" title="Sebzés">SP</th>
+										<th class="tooltip" title="Mozgásgátló tényező">MGT</th>
+										<th class="tooltip" title="Sebzésfelfogó érték">SFÉ</th>
+									</tr>
+									<tr>
+										<td colspan="2">Felszerelés nélkül</td>
+										<td id="karakterlap_ke">0</td>
+										<td id="karakterlap_te">0</td>
+										<td id="karakterlap_ve">0</td>
+										<td id="karakterlap_ce">0</td>
+										<td colspan="2" id="karakterlap_sp">0</td>
+										<td id="karakterlap_mgt">0</td>
+										<td id="karakterlap_sfe">0</td>
+									</tr>
+									<tr>
+										<td colspan="2">Felszereléssel</td>
+										<td id="karakterlap_mod_ke">0</td>
+										<td id="karakterlap_mod_te">0</td>
+										<td id="karakterlap_mod_ve">0</td>
+										<td id="karakterlap_mod_ce">0</td>
+										<td colspan="2" id="karakterlap_mod_sp">0</td>
+										<td id="karakterlap_mod_mgt">0</td>
+										<td id="karakterlap_mod_sfe">0</td>
+									</tr>
+								</table>
+							</div>
+							
+							<h3>Karakter leírása, jegyzetek</h3>
+							<div>
+								<textarea id="karakterlap_kulso" cols="60" rows="10"></textarea>
+							</div>
+							
+							<h3>Képzettségek</h3>
+							<div>
+								<table id="karakterlap_kepzettseglap"></table>
+							</div>
+								
+							<h3>Tárgylista</h3>
+							<div>
+								<table id="targylista_targylista">
+									<tr>
+										<th class="tooltip" title="Itt lehet bejelölni, hogy a karakter viseli-e az adott tárgyat vagy sem. A tárgy értékei automatikusan hozzáadódnak a harcértékek &quot;Felszereléssel&quot; részéhez.">Visel.</th>
+										<th>Típus</th>
+										<th style="width: 160px;">Tárgy neve</th>
+										<th style="width: 300px;">Tulajdonságok</th>
+										<th></th>
+									</tr>
+								</table>
+									
+								<div class="ui-widget">
+									<div class="ui-state-highlight ui-corner-all" style="margin-top: 20px; padding: 0 .7em;">
+										<p><span class="ui-icon ui-icon-info" style="float: left; margin-right: .3em;"></span>
+										Fegyvert, pajzsot és vérteket csak úgy lehet hozzáadni, hogy egy "mintatárgyból" indulsz ki. Tehát egy +2-t sebző mágikus hosszúkard esetében pl. ki kell választani a hosszúkardot, majd egy +2 SP értékmódosítót kell neki adni, illetve egy "mágikus" egyéb tulajdonságot.
+										Módosítókat kattintással lehet eltávolítani.</p>
+									</div>
+								</div>
+								
+								<!-- Tárgy hozzáadó -->
+								<table>
+									<tr>
+										<th>Tárgy sablon</th>
+										<th>Tárgytípus</th>
+										<th>Tárgy neve</th>
+									</tr>
+									<tr>
+										<td><select id="targylista_template"></select></td>
+										<td id="targylista_kategoriavalaszto">egyéb</td>
+										<td><input id="targylista_targynev" type="text" value="" /></td>
+									</tr>
+									<tr>
+										<th style="min-width: 250px;">Tulajdonság hozzáadása</th>
+										<th colspan="2" style="min-width: 300px;">Tulajdonságok</th>
+									</tr>
+									<tr>
+										<td>
+											<table>
+												<tr>
+													<th colspan="3" class="tooltip" title="Ezeket a módosítókat beleszámolja a program a karakter értékeibe.">Értékmódosítók</th>
+												</tr>
+												<tr>
+													<td><select id="targylista_ertekselect"></select></td> 
+													<td><input type="text" id="targylista_ertekmodosito" class="spinner" value="0" /></td> 
+													<td><a id="targylista_addertekmodosito" class="button"><img src="programdata/gfx/dot.gif" alt="Eltávolítás" class="icon ic_b_nextpage"></a></td>
+												</tr>
+												<tr>
+													<th colspan="3" class="tooltip" title="Ezekkel a tulajdonságokkal a karakterlap nem számol. Pl. 'mágikus'">Egyéb tulajdonságok</th>
+												</tr>
+												<tr>
+													<td colspan="2"><input id="targylista_egyebmodosito" type="text" /></td> 
+													<td><a id="targylista_addegyebmodosito" class="button"><img src="programdata/gfx/dot.gif" alt="Eltávolítás" class="icon ic_b_nextpage"></a></td>
+												</tr>
+											</table>
+										</td>
+										<td id="targylista_tulajdonsagok" colspan="2"></td>
+									</tr>
+									<tr>
+										<td colspan="3"><a id="targylista_addtargy" class="button">Tárgy hozzáadása</a></td>
+									</tr>
+								</table>
+							</div>
+						</div>
+					</div>
+					
+					<!-- Szintlépés -->
+					<div id="tabs-2">
+						<div style="margin-bottom: 1em;">
+							<a class="button ui-state-default ui-corner-all tooltip save" title="Szintlépés véglegesítése"><span class="ui-icon ui-icon-circle-check"></span></a>
+							<a class="button ui-state-default ui-corner-all tooltip reset" title="Szintlépés elvetése"><span class="ui-icon ui-icon-circle-close"></span></a>
+							<a class="button ui-state-default ui-corner-all tooltip" title="Elosztandó karakteralkotási pont">KAP: <b id="szintlepes_kap">0</b></a>
+						</div>
+						<div class="accordion">
+							<h3>Tulajdonságok</h3>
+							<div>
+								<div class="ui-widget">
+									<div class="ui-state-highlight ui-corner-all" style="margin-top: 20px; padding: 0 .7em;">
+										<p><span class="ui-icon ui-icon-info" style="float: left; margin-right: .3em;"></span>
+										Minden tulajdonság növelése 20 KAP-ba kerül.
+										</p>
+									</div>
+								</div>
+								<table id="szintlepes_tulajdonsagok">
+									<tr>
+										<th class="tooltip" title="Erő">ERŐ</th>
+										<th class="tooltip" title="Gyorsaság">GYO</th>
+										<th class="tooltip" title="Ügyesség">ÜGY</th>
+										<th class="tooltip" title="Állóképesség">ÁLL</th>
+										<th class="tooltip" title="Egészség">EGÉ</th>
+									<tr>
+										<td><input id="szintlepes_ero" class="spinner" value="0"/></td>
+										<td><input id="szintlepes_gyo" class="spinner" value="0"/></td>
+										<td><input id="szintlepes_ugy" class="spinner" value="0"/></td>
+										<td><input id="szintlepes_all" class="spinner" value="0"/></td>
+										<td><input id="szintlepes_ege" class="spinner" value="0"/></td>
+									</tr>
+									<tr>
+										<th class="tooltip" title="Intelligencia">INT</th>
+										<th class="tooltip" title="Karizma">KAR</th>
+										<th class="tooltip" title="Akaraterő">AKA</th>
+										<th class="tooltip" title="Asztrál">ASZ</th>
+										<th class="tooltip" title="Érzékelés">ÉRZ</th>
+									</tr>
+									<tr>
+										<td><input id="szintlepes_int" class="spinner" value="0"/></td>
+										<td><input id="szintlepes_kar" class="spinner" value="0"/></td>
+										<td><input id="szintlepes_aka" class="spinner" value="0"/></td>
+										<td><input id="szintlepes_asz" class="spinner" value="0"/></td>
+										<td><input id="szintlepes_erz" class="spinner" value="0"/></td>
+									</tr>
+								</table>
+							</div>
+							
+							<h3>Harcértékek</h3>
+							<div>
+								<div class="ui-widget">
+									<div class="ui-state-highlight ui-corner-all" style="margin-top: 20px; padding: 0 .7em;">
+										<p><span class="ui-icon ui-icon-info" style="float: left; margin-right: .3em;"></span>
+										Az értékek növelésének KAP költségeit zárójelekben találod. KÉ, TÉ, VÉ, CÉ növeléshez Harcérték Módosítót (HM) kell vásárolnod KAP-ból. 1 HM = 2 KAP.
+										</p>
+									</div>
+								</div>
+								
+								<table id="szintlepes_harcertekek">
+									<tr>
+										<th class="tooltip" title="Fájdalomtűrési pont">FP (1)</th>
+										<th class="tooltip" title="Pszi-pont">&psi;P (2)</th>
+										<th class="tooltip" title="Manapont">MP (3)</th>
+										<th class="tooltip" title="Kegy-pont">KP (3)</th>         
+									<tr>
+										<td><input id="szintlepes_fp" class="spinner" value="0"/></td>
+										<td><input id="szintlepes_pp" class="spinner" value="0"/></td>
+										<td><input id="szintlepes_mp" class="spinner" value="0"/></td>
+										<td><input id="szintlepes_kp" class="spinner" value="0"/></td>
+									</tr>
+									<tr>
+										<th class="tooltip" title="Kezdeményező érték">KÉ (2)</th> <th class="tooltip" title="Támadóérték">TÉ (2)</th>
+										<th class="tooltip" title="Védekező érték">VÉ (2)</th><th class="tooltip" title="Célzóérték">CÉ (2)</th>
+									</tr>
+									<tr>
+										<td><input id="szintlepes_ke" class="spinner" value="0"/></td>
+										<td><input id="szintlepes_te" class="spinner" value="0"/></td>
+										<td><input id="szintlepes_ve" class="spinner" value="0"/></td>
+										<td><input id="szintlepes_ce" class="spinner" value="0"/></td>
+									</tr>
+								</table>
+							</div>
+							
+							<h3>Képzettségek</h3>
+							<div>
+								<div class="ui-state-highlight ui-corner-all" style="margin-top: 20px; padding: 0 .7em;">
+									<p><span class="ui-icon ui-icon-info" style="float: left; margin-right: .3em;"></span>
+									A képzettségek Képzettség Pontba kerülnek. 1 Képz. P. = 1 KAP. A képzettség pontokat nem muszáj mind elkölteni, a KAP-al ellentétben lehet tartogatni további szintekre.
+									</p>
+								</div>
+								
+								<table>
+									<tr>
+										<th class="tooltip" title="Képzettség-pont">KP</th>
+										<th class="tooltip" title="Képzettségek KP költsége összesen">Ktg.</th>
+										<th class="tooltip" title="Megmaradó KP">Marad.</th>
+									</tr>
+									<tr>
+										<td><input id="szintlepes_kepzp" class="spinner" value="0" /></td>
+										<td id="szintlepes_kepzossz">0</td>
+										<td id="szintlepes_kepzmarad">0</td>
+									</tr>
+								</table>
+								
+								<table id="szintlepes_kepzettsegek">
+									<tr>
+										<th>Képzettség</th>
+										<th>Specializáció</th>
+										<th>Fok</th>
+										<th class="tooltip" title="A képzettség tanítójának Oktatás foka">Oktatás</th>
+										<th>&plus;/&minus;</th>
+									</tr>
+									<tr>
+										<td><select id="szintlepes_kepzettsegvalaszto"></option></select></td>
+										<td><input type="text" id="szintlepes_kepzettsegspec" value="" /></td>
+										<td><input id="szintlepes_kepzettsegvalasztofok" class="kepzspinnerN spinner" value="1"/></td>
+										<td><input id="szintlepes_oktatasvalaszto" class="kepzspinnerO spinner" value="0"/></td>
+										<td><a id="szintlepes_kepzettseghozzaado" class="ui-state-default ui-corner-all button"><span class="ui-icon ui-icon-plus"></span></a></td>
+									</tr>
+								</table>
+							</div>
+							
+							<h3>Ingyenes módosítók</h3>
+							<div>
+								<div class="ui-state-highlight ui-corner-all" style="margin-top: 20px; padding: 0 .7em;">
+									<p><span class="ui-icon ui-icon-info" style="float: left; margin-right: .3em;"></span>
+									Az alábbi módosítók nem kerülnek KAP-ba. Ingyenes módosítók lehetnek szintenkénti bónuszok képzettségekből, bónusz tulajdonság egy képzettség 4. fokának elérésekor, vagy bármi más forrásból amit a KM engedélyez. Mindig egyeztess a KM-mel ha ingyenes módosítót adsz hozzá.
+									<br />Szintenkénti módosítókat adó hátterek: Mágiatagadás
+									<br />Szintenkénti módosítókat adó képzettségek: Fájdalomtűrés, Harctéri gyakorlat, Pszi, Magasmágia, Tapasztalati mágia, Vallásismeret
+									</p>
+								</div>
+								
+								<table id="szintlepes_ingyenesek">
+									<tr>
+										<th>Érték</th>
+										<th>Módosító</th>
+										<th>Indoklás</th>
+										<th>&plus;/&minus;</th>
+									</tr>
+									<tr>
+										<td>
+											<select id="szintlepes_ingyenesvalaszto">
+												<option value="ero">ERŐ</option>
+												<option value="ugy">ÜGY</option>
+												<option value="gyo">GYO</option>
+												<option value="all">ÁLL</option>
+												<option value="ege">EGÉ</option>
+												<option value="int">INT</option>
+												<option value="kar">KAR</option>
+												<option value="aka">AKA</option>
+												<option value="asz">ASZ</option>
+												<option value="erz">ÉRZ</option>
+												<option value="fp">FP</option>
+												<option value="pp">&psi;P</option>
+												<option value="mp">MP</option>
+												<option value="kp">KP</option>
+												<option value="ke">KÉ</option>
+												<option value="te">TÉ</option>
+												<option value="ve">VÉ</option>
+												<option value="ce">CÉ</option>
+												<option value="mtme">MTME</option>
+												<option value="atme">ATME</option>	
+											</select>
+										</td>
+										<td><input id="szintlepes_ingyenesmodosito" class="spinner" value="0"/></td>
+										<td><input id="szintlepes_ingyeneskomment" value=""/></td>
+										<td><a id="szintlepes_ingyeneshozzaado" class="ui-state-default ui-corner-all button"><span class="ui-icon ui-icon-plus"></span></a></td>
+									</tr>
+								</table>
+							</div>
+						</div>
+					</div>
+					
+					<!-- Szintlépések -->
+					<div id="tabs-3">
+						<div class="accordion"></div>
+					</div>
+					
+					<!-- Előtörténet -->
+					<div id="tabs-4">
+						<textarea id="elotortenet"></textarea>
+					</div>
+				</div>
+				<!-- End of Karakter -->
+			</div>
+			<!-- End of Content -->
+		</div>
+		<!-- End of Wrapper -->
+	</body>
+<!--
+GEM MAGUS karaktergeneráló és interaktív karakterlap
+(c)2015 Sándor Preszter - https://opensource.org/licenses/MIT 
+-->	
+</html>       

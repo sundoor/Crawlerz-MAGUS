@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kasztok>
+    <kaszt id="0" name="harcos">
+        <mod refloc="karakter>hatterek" refnode="hatter" refid="14" value="1" kap="1"></mod>
+    </kaszt>
+    <kaszt id="1" name="lovag">
+        <mod refloc="karakter>hatterek" refnode="hatter" refid="15" value="1" kap="1"></mod>
+        <mod refloc="karakter>hatterek" refnode="hatter" refid="36" value="1" kap="0"></mod>
+    </kaszt>
+    <kaszt id="2" name="fejvadász">
+        <mod refloc="karakter>hatterek" refnode="hatter" refid="16" value="1" kap="1"></mod>
+        <mod refloc="karakter>hatterek" refnode="hatter" refid="37" value="1" kap="0"></mod>
+    </kaszt>
+    <kaszt id="3" name="tolvaj">
+        <mod refloc="karakter>hatterek" refnode="hatter" refid="17" value="1" kap="1"></mod>    
+    </kaszt>
+    <kaszt id="4" name="bárd">
+        <mod refloc="karakter>hatterek" refnode="hatter" refid="32" value="1" kap="0"></mod>
+        <mod refloc="karakter>hatterek" refnode="hatter" refid="18" value="1" kap="1"></mod>
+    </kaszt>
+    <kaszt id="5" name="harcművész">
+        <mod refloc="karakter>hatterek" refnode="hatter" refid="37" value="1" kap="0"></mod>
+        <mod refloc="karakter>hatterek" refnode="hatter" refid="19" value="1" kap="1"></mod>
+    </kaszt>
+    <kaszt id="6" name="pap">
+        <mod refloc="karakter>hatterek" refnode="hatter" refid="13" value="1" kap="0"></mod>
+        <mod refloc="karakter>hatterek" refnode="hatter" refid="20" value="1" kap="1"></mod>
+    </kaszt>
+    <kaszt id="7" name="paplovag">
+        <mod refloc="karakter>hatterek" refnode="hatter" refid="13" value="1" kap="0"></mod>
+        <mod refloc="karakter>hatterek" refnode="hatter" refid="21" value="1" kap="1"></mod>
+    </kaszt>
+    <kaszt id="8" name="boszorkány">
+        <mod refloc="karakter>hatterek" refnode="hatter" refid="32" value="1" kap="0"></mod>
+        <mod refloc="karakter>hatterek" refnode="hatter" refid="37" value="1" kap="0"></mod>
+        <mod refloc="karakter>hatterek" refnode="hatter" refid="22" value="1" kap="1"></mod>
+    </kaszt>
+    <kaszt id="9" name="boszorkánymester"> 
+        <mod refloc="karakter>hatterek" refnode="hatter" refid="32" value="1" kap="0"></mod>
+        <mod refloc="karakter>hatterek" refnode="hatter" refid="37" value="1" kap="0"></mod>
+        <mod refloc="karakter>hatterek" refnode="hatter" refid="23" value="1" kap="1"></mod>
+    </kaszt>
+    <kaszt id="10" name="tűzvarázsló">
+        <mod refloc="karakter>hatterek" refnode="hatter" refid="32" value="1" kap="0"></mod>
+        <mod refloc="karakter>hatterek" refnode="hatter" refid="37" value="1" kap="0"></mod>
+        <mod refloc="karakter>hatterek" refnode="hatter" refid="24" value="1" kap="1"></mod>
+    </kaszt>
+    <kaszt id="11" name="varázsló">
+        <mod refloc="karakter>hatterek" refnode="hatter" refid="32" value="1" kap="0"></mod>
+        <mod refloc="karakter>hatterek" refnode="hatter" refid="37" value="1" kap="0"></mod>
+        <mod refloc="karakter>hatterek" refnode="hatter" refid="25" value="1" kap="1"></mod>
+    </kaszt>
+</kasztok>

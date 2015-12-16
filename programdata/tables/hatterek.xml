@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hatterek>
+    <hatter id="1" name="Adottság – Erő" kap="1">
+        <mod refloc="karakter>tulajdonsagok" refnode="tul" refid="ero" value="1" perszint="0"></mod>
+    </hatter>
+    <hatter id="2" name="Adottság – Gyorsaság" kap="1">
+        <mod refloc="karakter>tulajdonsagok" refnode="tul" refid="gyo" value="1" perszint="0"></mod>
+    </hatter>
+    <hatter id="3" name="Adottság – Ügyesség" kap="1">
+        <mod refloc="karakter>tulajdonsagok" refnode="tul" refid="ugy" value="1" perszint="0"></mod>
+    </hatter>
+    <hatter id="4" name="Adottság – Állóképesség" kap="1">
+        <mod refloc="karakter>tulajdonsagok" refnode="tul" refid="all" value="1" perszint="0"></mod>
+    </hatter>
+    <hatter id="5" name="Adottság – Egészség" kap="1">
+        <mod refloc="karakter>tulajdonsagok" refnode="tul" refid="ege" value="1" perszint="0"></mod>
+    </hatter>
+    <hatter id="6" name="Adottság – Intelligencia" kap="1">
+        <mod refloc="karakter>tulajdonsagok" refnode="tul" refid="int" value="1" perszint="0"></mod>
+    </hatter>
+    <hatter id="7" name="Adottság – Karizma" kap="1">
+        <mod refloc="karakter>tulajdonsagok" refnode="tul" refid="kar" value="1" perszint="0"></mod>
+    </hatter>
+    <hatter id="8" name="Adottság – Akaraterő" kap="1">
+        <mod refloc="karakter>tulajdonsagok" refnode="tul" refid="aka" value="1" perszint="0"></mod>
+    </hatter>
+    <hatter id="9" name="Adottság – Asztrál" kap="1">
+        <mod refloc="karakter>tulajdonsagok" refnode="tul" refid="asz" value="1" perszint="0"></mod>
+    </hatter>
+    <hatter id="10" name="Adottság – Érzékelés" kap="1">
+        <mod refloc="karakter>tulajdonsagok" refnode="tul" refid="erz" value="1" perszint="0"></mod>
+    </hatter>
+    <hatter id="11" name="Faj" kap="1"></hatter>
+    <hatter id="12" name="Holtak szeme" kap="1"></hatter>
+    <hatter id="13" name="Kegyelt" kap="1"></hatter>
+    <hatter id="14" name="Klán, rend, iskola – Harcos" kap="5"></hatter>
+    <hatter id="15" name="Klán, rend, iskola – Lovag" kap="6"></hatter>
+    <hatter id="16" name="Klán, rend, iskola – Fejvadász" kap="7"></hatter>
+    <hatter id="17" name="Klán, rend, iskola – Tolvaj" kap="6"></hatter>
+    <hatter id="18" name="Klán, rend, iskola – Bárd" kap="6"></hatter>
+    <hatter id="19" name="Klán, rend, iskola – Harcművész" kap="10"></hatter>
+    <hatter id="20" name="Klán, rend, iskola – Pap" kap="7"></hatter>
+    <hatter id="21" name="Klán, rend, iskola – Paplovag" kap="6"></hatter>
+    <hatter id="22" name="Klán, rend, iskola – Boszorkány" kap="5"></hatter>
+    <hatter id="23" name="Klán, rend, iskola – Boszorkánymester" kap="6"></hatter>
+    <hatter id="24" name="Klán, rend, iskola – Tűzvarázsló" kap="6"></hatter>
+    <hatter id="25" name="Klán, rend, iskola – Varázsló" kap="10"></hatter>
+    <hatter id="26" name="Léleknyomat" kap="1"></hatter>
+    <hatter id="27" name="Mágiatagadás I." kap="1" perszint="1">
+        <mod refloc="karakter>harcertekek" refnode="hm" refid="mtme" value="1" perszint="1"></mod>
+        <mod refloc="karakter>harcertekek" refnode="hm" refid="atme" value="1" perszint="1"></mod>
+    </hatter>
+    <hatter id="28" name="Mágiatagadás II." kap="2" perszint="1">
+        <mod refloc="karakter>harcertekek" refnode="hm" refid="mtme" value="2" perszint="1"></mod>
+        <mod refloc="karakter>harcertekek" refnode="hm" refid="atme" value="2" perszint="1"></mod>
+    </hatter>
+    <hatter id="29" name="Mágiatagadás III." kap="3" perszint="1">
+        <mod refloc="karakter>harcertekek" refnode="hm" refid="mtme" value="3" perszint="1"></mod>
+        <mod refloc="karakter>harcertekek" refnode="hm" refid="atme" value="3" perszint="1"></mod>
+    </hatter>
+    <hatter id="30" name="Mágiatagadás IV." kap="4" perszint="1">
+        <mod refloc="karakter>harcertekek" refnode="hm" refid="mtme" value="4" perszint="1"></mod>
+        <mod refloc="karakter>harcertekek" refnode="hm" refid="atme" value="4" perszint="1"></mod>
+    </hatter>
+    <hatter id="31" name="Mágiatagadás V." kap="5" perszint="1">
+        <mod refloc="karakter>harcertekek" refnode="hm" refid="mtme" value="5" perszint="1"></mod>
+        <mod refloc="karakter>harcertekek" refnode="hm" refid="atme" value="5" perszint="1"></mod>
+    </hatter>
+    <hatter id="32" name="Mágikus fogékonyság" kap="1"></hatter>
+    <hatter id="33" name="Manalátó I." kap="2"></hatter>
+    <hatter id="34" name="Manalátó II." kap="3"></hatter>
+    <hatter id="35" name="Művésztehetség" kap="1"></hatter>
+    <hatter id="36" name="Nemesi vér" kap="1"></hatter>
+    <hatter id="37" name="Pszi érzékenység" kap="1"></hatter>
+    <hatter id="38" name="Rang I." kap="1"></hatter>
+    <hatter id="39" name="Rang II." kap="2"></hatter>
+    <hatter id="40" name="Rang III." kap="3"></hatter>
+    <hatter id="41" name="Sugallat" kap="1"></hatter>
+    <hatter id="42" name="Szellemek jóindulata I." kap="1"></hatter>
+    <hatter id="43" name="Szellemek jóindulata II." kap="2"></hatter>
+    <hatter id="44" name="Szellemek jóindulata III." kap="3"></hatter>
+    <hatter id="45" name="Vagyon I." kap="1"></hatter>
+    <hatter id="46" name="Vagyon II." kap="2"></hatter>
+    <hatter id="47" name="Vagyon III." kap="3"></hatter>
+</hatterek>
