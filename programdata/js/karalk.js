@@ -2,7 +2,7 @@
  * Karakteralkotás
  * 
  * @author	Sándor Preszter <preszter.sandor@gmail.com>
- * @version	1.1 
+ * @version	1.01 
  */ 
 var karalk = {
 	xml: '<?xml version="1.0" encoding="UTF-8"?>',
@@ -391,7 +391,7 @@ var karalk = {
 			}
 			karalk.xml += "</kepzettsegek>";
 			karalk.xml += "</karakter><szintlepesek></szintlepesek><targyak></targyak><elotortenet></elotortenet></karakterlap>";
-			this.download("save.xml", karalk.xml);
+			this.download("save.txt", karalk.xml);
 		},
 		
 		/**
@@ -399,7 +399,7 @@ var karalk = {
 		 */		 		
 		download: function(filename, text){
 			var pom = document.createElement('a');
-			pom.setAttribute('href', 'data:text/xml;charset=utf-8,' + encodeURIComponent(text));
+			pom.setAttribute('href', 'data:text/txt;charset=utf-8,' + encodeURIComponent(text));
 			pom.setAttribute('download', filename);
 			
 			if (document.createEvent){

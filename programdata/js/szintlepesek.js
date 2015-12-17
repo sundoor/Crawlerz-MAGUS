@@ -2,7 +2,7 @@
  * Szintlépések listázása
  * 
  * @author	Sándor Preszter <preszter.sandor@gmail.com>
- * @version	1.0
+ * @version	1.00
  */ 
 var szintlepesek = {
 	/**

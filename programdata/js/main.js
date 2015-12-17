@@ -3,7 +3,7 @@
  * (c)2015 Sándor Preszter - https://opensource.org/licenses/MIT 
  * 
  * @author	Sándor Preszter <preszter.sandor@gmail.com>
- * @version	1.2
+ * @version	1.03
  * @since	2015-10-31 
  */ 
 
@@ -96,18 +96,18 @@ $(function(){
 		var files = evt.target.files;
 		
 		f = files[0];
-		if (f.type.match('text/xml')){
-		
-		var reader = new FileReader();
-		
-		reader.onload = (function(theFile){
-			return function(e) {
-				XMLtext = e.target.result;
-				Gsave = $(interpretXML(XMLtext));
-				ini();
-			};
-		})(f);
-		reader.readAsText(f);
+		// Korábban f.type.match('text/xml') ellenőrzés volt, de a Chrome nem szereti az XML fájlokat
+		if (true){
+			var reader = new FileReader();
+			
+			reader.onload = (function(theFile){
+				return function(e) {
+					XMLtext = e.target.result;
+					Gsave = $(interpretXML(XMLtext));
+					ini();
+				};
+			})(f);
+			reader.readAsText(f);
 		}
 		else{ alert("Érvénytelen file!"); }
 	});

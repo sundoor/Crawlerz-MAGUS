@@ -2,7 +2,7 @@
  * Tárgylista kezelése
  * 
  * @author	Sándor Preszter <preszter.sandor@gmail.com>
- * @version	1.1
+ * @version	1.01
  */ 
 var targylista = {
 	/**

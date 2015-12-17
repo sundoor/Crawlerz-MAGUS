@@ -2,7 +2,7 @@
  * Szintlépések hozzáadása
  * 
  * @author	Sándor Preszter <preszter.sandor@gmail.com>
- * @version	1.2
+ * @version	1.02
  */ 
 var szintlepes = {
 	xml: '',

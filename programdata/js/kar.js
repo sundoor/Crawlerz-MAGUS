@@ -2,7 +2,7 @@
  * Karakterlap kezelése
  * 
  * @author	Sándor Preszter <preszter.sandor@gmail.com>
- * @version	1.1
+ * @version	1.02
  */ 
 var kar = {
 	profil: {knev: "", vnev: "", faj: 0, kaszt: 0, kulso: ""},
@@ -345,7 +345,7 @@ var kar = {
 		Gsave.find("karakterlap>elotortenet").text($('#elotortenet').val());
 		Gsave.find("karakterlap>karakter>profil>kulso").text($('#karakterlap_kulso').val());
 		
-		this.download("save.xml", xmlToString(Gsave[0]));  
+		this.download("save.txt", xmlToString(Gsave[0]));  
 	},
 	
 	/**
@@ -353,7 +353,7 @@ var kar = {
 	 */	 	
 	download: function(filename, text) {
 		var pom = document.createElement('a');
-		pom.setAttribute('href', 'data:text/xml;charset=utf-8,' + encodeURIComponent(text));
+		pom.setAttribute('href', 'data:text/txt;charset=utf-8,' + encodeURIComponent(text));
 		pom.setAttribute('download', filename);
 		
 		if (document.createEvent) {
