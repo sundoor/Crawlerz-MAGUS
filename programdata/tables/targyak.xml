@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <targyak>
     <targy id="1" name="ököl" kateg="20" meret="1" ido="3" ke="0" te="0" ve="0" ce="0" sp="1" sfe="0" mgt="0" suly="0" stp="0"></targy>
     <targy id="2" name="ököl (p.h. 1. fok)" kateg="20" meret="1" ido="3" ke="0" te="0" ve="0" ce="0" sp="1k3" sfe="0" mgt="0" suly="0" stp="0"></targy>
@@ -54,7 +54,7 @@
     <targy id="52" name="kétkezes csatabárd" kateg="6" meret="4" ido="10" ke="0" te="15" ve="5" ce="5" sp="5k6" sfe="0" mgt="0" suly="5" stp="30"></targy>
     <targy id="53" name="kétkezes buzogány" kateg="4" meret="4" ido="10" ke="0" te="16" ve="5" ce="0" sp="3k6+2" sfe="0" mgt="0" suly="5" stp="35"></targy>
     <targy id="54" name="láncos buzogány" kateg="4" meret="4" ido="5" ke="5" te="18" ve="10" ce="0" sp="2k6+1" sfe="0" mgt="0" suly="2" stp="30"></targy>
-    <targy id="55" name="hosszú bot" kateg="8" meret="4" ido="5" ke="9" te="10" ve="16" ce="0" sp="2k6" sfe="0" mgt="0" suly="2" stp="30"></targy>
+    <targy id="55" name="hosszú bot" kateg="3" meret="4" ido="5" ke="9" te="10" ve="16" ce="0" sp="2k6" sfe="0" mgt="0" suly="2" stp="30"></targy>
     <targy id="56" name="alabárd" kateg="8" meret="5" ido="10" ke="10" te="15" ve="15" ce="0" sp="5k6" sfe="0" mgt="0" suly="4" stp="30"></targy>
     <targy id="57" name="lándzsa" kateg="8" meret="5" ido="5" ke="13" te="15" ve="13" ce="0" sp="2k6+2" sfe="0" mgt="0" suly="2,3" stp="40"></targy>
     <targy id="58" name="lovaskopja" kateg="8" meret="5" ido="20" ke="15" te="20" ve="1" ce="0" sp="4k6" sfe="0" mgt="0" suly="3" stp="40"></targy>

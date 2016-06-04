@@ -2,7 +2,7 @@
  * Karakterlap kezelése
  * 
  * @author	Sándor Preszter <preszter.sandor@gmail.com>
- * @version	1.02
+ * @version	1.03
  */ 
 var kar = {
 	profil: {knev: "", vnev: "", faj: 0, kaszt: 0, kulso: ""},
@@ -149,7 +149,7 @@ var kar = {
 				
 			for(i=0; i<n; i++){
 				if(kar.kepzettsegek[i].uniqueid == $(this).attr('uniqueid')){
-					kar.kepzettsegek[i].fok += $(this).attr('fok')*1;
+					kar.kepzettsegek[i].fok = kar.kepzettsegek[i].fok*1 + $(this).attr('fok')*1;
 					 
 					if(kar.kepzettsegek[i].spec != $(this).attr('spec') && $(this).attr('spec').length > 0){
 						kar.kepzettsegek[i].spec = $(this).attr('spec');
@@ -193,7 +193,7 @@ var kar = {
 				kfok = 0;
 				for(key in kar.kepzettsegek){
 					if(kar.kepzettsegek[key]["id"] == node.attr("kateg")){
-						kfok = kar.kepzettsegek[key]["fok"]
+						kfok = kar.kepzettsegek[key]["fok"];
 					}
 				}
 				if(!kfok){ kfok = 0; }
@@ -204,14 +204,14 @@ var kar = {
 					Gkonstansok.find('konstansok>vertviselet_bonusz>bonusz[fok="'+kfok+'"][meret="'+node.attr("meret")+'"]>mod').each(function(){
 						// MGT módosító korrigálása, hogy csak a vért MGT-jét csökkentse a képzettség, ne a totált
 						// SFÉ bónusznál ez a feltétel nem fog teljesülni soha
-						kar.mod[$(this).attr("refid")] += (((node.attr("mgt")+$(this).attr("value")*1) < 0) ? node.attr("mgt")*(-1) : $(this).attr("value")*1);
+						kar.mod[$(this).attr("refid")] +=  (((node.attr("mgt")*1+$(this).attr("value")*1) < 0) ? node.attr("mgt")*(-1) : $(this).attr("value")*1);
 					});
 				}
 				// Pajzshasználat
 				else if(node.attr("kateg")*1 == 19){
 					Gkonstansok.find('konstansok>pajzshasznalat_bonusz>bonusz[fok="'+kfok+'"]>mod').each(function(){
 						// MGT módosító korrigálása, hogy csak a pajzs MGT-jét csökkentse a képzettség, ne a totált
-						kar.mod[$(this).attr("refid")] += (((node.attr("mgt")+$(this).attr("value")*1) < 0) ? node.attr("mgt")*(-1) : $(this).attr("value")*1);
+						kar.mod[$(this).attr("refid")] += (((node.attr("mgt")*1+$(this).attr("value")*1) < 0) ? node.attr("mgt")*(-1) : $(this).attr("value")*1);
 					});
 				}
 				// Fegyverhasználat, pusztakezes harc, harcművészet
@@ -324,7 +324,7 @@ var kar = {
 			 
 			n = kar.kepzettsegek.length;
 			for(i=0; i<n; i++){
-				this.addfixed(kar.kepzettsegek[i]["uniqueid"], kar.kepzettsegek[i]["id"], kar.kepzettsegek[i]["fok"], kar.kepzettsegek[i]["spec"]); 
+				this.addfixed(kar.kepzettsegek[i]["uniqueid"], kar.kepzettsegek[i]["id"], kar.kepzettsegek[i]["fok"]*1, kar.kepzettsegek[i]["spec"]); 
 			}
 		},
 		
