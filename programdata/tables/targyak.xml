@@ -35,8 +35,8 @@
     <targy id="33" name="rapír" kateg="5" meret="3" ido="3" ke="7" te="10" ve="13" ce="0" sp="1k10" sfe="0" mgt="0" suly="0,8" stp="20"></targy>
     <targy id="34" name="rövid kard" kateg="5" meret="3" ido="5" ke="5" te="10" ve="8" ce="0" sp="1k10+1" sfe="0" mgt="0" suly="1" stp="25"></targy>
     <targy id="35" name="sequor" kateg="5" meret="3" ido="5" ke="5" te="13" ve="13" ce="0" sp="1k6+2" sfe="0" mgt="0" suly="0,8" stp="20"></targy>
-    <targy id="36" name="slan kard" kateg="5" meret="3" ido="5" ke="6" te="18" ve="12" ce="0" sp="1k10+2" sfe="0" mgt="0" suly="1,6" stp="30"></targy>
-    <targy id="37" name="slan tőr" kateg="5" meret="3" ido="3" ke="8" te="14" ve="8" ce="0" sp="1k10" sfe="0" mgt="0" suly="0,9" stp="20"></targy>
+    <targy id="36" name="slan kard" kateg="16" meret="3" ido="5" ke="6" te="18" ve="12" ce="0" sp="1k10+2" sfe="0" mgt="0" suly="1,6" stp="30"></targy>
+    <targy id="37" name="slan tőr" kateg="16" meret="3" ido="3" ke="8" te="14" ve="8" ce="0" sp="1k10" sfe="0" mgt="0" suly="0,9" stp="20"></targy>
     <targy id="38" name="szablya" kateg="5" meret="3" ido="5" ke="6" te="10" ve="12" ce="0" sp="1k10+1" sfe="0" mgt="0" suly="1,2" stp="20"></targy>
     <targy id="39" name="egykezes csatabárd" kateg="6" meret="3" ido="5" ke="3" te="10" ve="5" ce="0" sp="2k6+1" sfe="0" mgt="0" suly="1" stp="25"></targy>
     <targy id="40" name="csatacsillag" kateg="6" meret="3" ido="5" ke="4" te="13" ve="4" ce="0" sp="2k6+2" sfe="0" mgt="0" suly="2,2" stp="20"></targy>
@@ -54,7 +54,7 @@
     <targy id="52" name="kétkezes csatabárd" kateg="6" meret="4" ido="10" ke="0" te="15" ve="5" ce="5" sp="5k6" sfe="0" mgt="0" suly="5" stp="30"></targy>
     <targy id="53" name="kétkezes buzogány" kateg="4" meret="4" ido="10" ke="0" te="16" ve="5" ce="0" sp="3k6+2" sfe="0" mgt="0" suly="5" stp="35"></targy>
     <targy id="54" name="láncos buzogány" kateg="4" meret="4" ido="5" ke="5" te="18" ve="10" ce="0" sp="2k6+1" sfe="0" mgt="0" suly="2" stp="30"></targy>
-    <targy id="55" name="hosszú bot" kateg="3" meret="4" ido="5" ke="9" te="10" ve="16" ce="0" sp="2k6" sfe="0" mgt="0" suly="2" stp="30"></targy>
+    <targy id="55" name="hosszú bot" kateg="8" meret="4" ido="5" ke="9" te="10" ve="16" ce="0" sp="2k6" sfe="0" mgt="0" suly="2" stp="30"></targy>
     <targy id="56" name="alabárd" kateg="8" meret="5" ido="10" ke="10" te="15" ve="15" ce="0" sp="5k6" sfe="0" mgt="0" suly="4" stp="30"></targy>
     <targy id="57" name="lándzsa" kateg="8" meret="5" ido="5" ke="13" te="15" ve="13" ce="0" sp="2k6+2" sfe="0" mgt="0" suly="2,3" stp="40"></targy>
     <targy id="58" name="lovaskopja" kateg="8" meret="5" ido="20" ke="15" te="20" ve="1" ce="0" sp="4k6" sfe="0" mgt="0" suly="3" stp="40"></targy>
@@ -86,13 +86,13 @@
     <targy id="84" name="fegyverkabát" kateg="24" meret="1" ido="0" ke="0" te="0" ve="0" ce="0" sp="0" sfe="1" mgt="0" suly="5" stp="20"></targy>
     <targy id="85" name="bőrvért" kateg="24" meret="1" ido="0" ke="0" te="0" ve="0" ce="0" sp="0" sfe="1" mgt="0" suly="8" stp="20"></targy>
     <targy id="86" name="keményített bőrvért" kateg="24" meret="1" ido="0" ke="0" te="0" ve="0" ce="0" sp="0" sfe="4" mgt="2" suly="7" stp="80"></targy>
-    <targy id="87" name="gyűrűs vértezet" kateg="24" meret="1" ido="0" ke="0" te="0" ve="0" ce="0" sp="0" sfe="1" mgt="1" suly="12" stp="20"></targy>
-    <targy id="88" name="brigandin" kateg="24" meret="1" ido="0" ke="0" te="0" ve="0" ce="0" sp="0" sfe="3" mgt="2" suly="15" stp="60"></targy>
-    <targy id="89" name="láncing" kateg="24" meret="1" ido="0" ke="0" te="0" ve="0" ce="0" sp="0" sfe="2" mgt="1" suly="20" stp="40"></targy>
-    <targy id="90" name="sodronying" kateg="24" meret="1" ido="0" ke="0" te="0" ve="0" ce="0" sp="0" sfe="3" mgt="1" suly="20" stp="60"></targy>
-    <targy id="91" name="pikkelyvért" kateg="24" meret="1" ido="0" ke="0" te="0" ve="0" ce="0" sp="0" sfe="3" mgt="2" suly="16" stp="60"></targy>
-    <targy id="92" name="lemezvért" kateg="24" meret="1" ido="0" ke="0" te="0" ve="0" ce="0" sp="0" sfe="2" mgt="2" suly="18" stp="40"></targy>
-    <targy id="93" name="rákozott páncél" kateg="24" meret="1" ido="0" ke="0" te="0" ve="0" ce="0" sp="0" sfe="4" mgt="2" suly="25" stp="80"></targy>
+    <targy id="87" name="gyűrűs vértezet" kateg="24" meret="2" ido="0" ke="0" te="0" ve="0" ce="0" sp="0" sfe="1" mgt="1" suly="12" stp="20"></targy>
+    <targy id="88" name="brigandin" kateg="24" meret="2" ido="0" ke="0" te="0" ve="0" ce="0" sp="0" sfe="3" mgt="2" suly="15" stp="60"></targy>
+    <targy id="89" name="láncing" kateg="24" meret="2" ido="0" ke="0" te="0" ve="0" ce="0" sp="0" sfe="2" mgt="1" suly="20" stp="40"></targy>
+    <targy id="90" name="sodronying" kateg="24" meret="2" ido="0" ke="0" te="0" ve="0" ce="0" sp="0" sfe="3" mgt="1" suly="20" stp="60"></targy>
+    <targy id="91" name="pikkelyvért" kateg="24" meret="2" ido="0" ke="0" te="0" ve="0" ce="0" sp="0" sfe="3" mgt="2" suly="16" stp="60"></targy>
+    <targy id="92" name="lemezvért" kateg="24" meret="2" ido="0" ke="0" te="0" ve="0" ce="0" sp="0" sfe="2" mgt="2" suly="18" stp="40"></targy>
+    <targy id="93" name="rákozott páncél" kateg="24" meret="2" ido="0" ke="0" te="0" ve="0" ce="0" sp="0" sfe="4" mgt="2" suly="25" stp="80"></targy>
     <targy id="94" name="mellvért" kateg="24" meret="2" ido="0" ke="0" te="0" ve="0" ce="0" sp="0" sfe="4" mgt="3" suly="20" stp="80"></targy>
     <targy id="95" name="félvértezet" kateg="24" meret="2" ido="0" ke="0" te="0" ve="0" ce="0" sp="0" sfe="5" mgt="4" suly="30" stp="100"></targy>
     <targy id="96" name="teljes vértezet" kateg="24" meret="2" ido="0" ke="0" te="0" ve="0" ce="0" sp="0" sfe="6" mgt="5" suly="35" stp="120"></targy>
